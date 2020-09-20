@@ -1,0 +1,58 @@
+{# templates/emails/signup.html.twig #}
+<p>
+    <a href="http://shop.elchalanaruba.com"><b>shop.elchalanaruba.com</b></a>
+</p>
+<h3>Thank you for your purchase  {{ ouser.fullname | split(" ")[0] }}!</h3>
+<h4>Order detail:</h4>
+<table>
+    <tbody>
+    <tr>
+        <td colspan="2"><b>Nº:</b></td><td colspan="2"><code><b>{{ oorderh.id }}-{{ oorderh.codecache }}</b></code></td>
+    </tr>
+    <tr>
+        <td colspan="2"><b>Status:</b></td><td colspan="2"><span>{{ oorderh.status }}</span></td>
+    </tr>
+    <tr>
+        <td colspan="2"><b>Date:</b></td><td colspan="2"><span>{{ oorderh.datepurchase | format_datetime() }}</span></td>
+    </tr>
+    <tr>
+        <td colspan="2"><b>Address:</b></td><td colspan="2"><span>{{ ouser.address }}</span></td>
+    </tr>
+    <tr>
+        <td colspan="2"><b>Observations:</b></td><td colspan="2"><span>{{ oorderh.notes }}</span></td>
+    </tr>
+    <tr>
+        <td><b>Total Afl:</b></td> <td align="right"><span>{{ oorderh.total | number_format(2, '.', ',') }}</span></td>
+        <td align="right"><b>Total Usd:</b></td> <td><span>{{ oorderh.total1 | number_format(2, '.', ',') }}</span></td>
+    </tr>
+    </tbody>
+</table>
+<hr/>
+<table>
+    <thead>
+        <tr>
+            <th>Nº</th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Units</th>
+            <th>Total Afl</th>
+            <th>Total Usd</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for oorderl in arlines %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ oorderl.product }}</td>
+            <td align="right">{{ oorderl.price | number_format(2, '.', ',') }}</td>
+            <td align="right">{{ oorderl.units }}</td>
+            <td align="right">{{ oorderl.total | number_format(2, '.', ',') }}</td>
+            <td align="right">{{ oorderl.total1 | number_format(2, '.', ',') }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br/>
+<center>
+    <a href="http://elchalanaruba.com"><b>El Chalán Aruba</b></a>
+</center>

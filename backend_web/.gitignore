@@ -1,0 +1,36 @@
+###> symfony/framework-bundle ###
+.env.local
+.env.local.php
+.env.*.local
+.env.prod
+.env.test
+.env
+/public/bundles/
+/var/
+/vendor/
+/.docker-sync/
+/config/jwt/
+/logs/
+logs
+###< symfony/framework-bundle ###
+
+###> Other files ###
+.idea
+.vscode
+.docker-sync
+.php_cs.cache
+###< Other files ###
+###> symfony/phpunit-bridge ###
+.phpunit
+.phpunit.result.cache
+/phpunit.xml
+bin/.phpunit
+###< symfony/phpunit-bridge ###
+
+###> custom ###
+composer.phar
+/public/react/*
+vendor.zip
+/public/pictures.zip
+###< custom ###
+

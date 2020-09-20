@@ -1,0 +1,51 @@
+version: '3.5'
+
+services:
+  sf-shopelchalan-web:
+    container_name: sf-shopelchalan-web
+    build:
+      # apunta al Dockerfile
+      context: ./docker/nginx
+      args:
+        UID: $U_ID
+    ports:
+      - 300:80
+
+    volumes:
+      - ./public:/appdata/www/public
+    depends_on:
+      - sf-shopelchalan-be
+    networks:
+      - sf-shopelchalan-net
+
+  sf-shopelchalan-be:
+    container_name: sf-shopelchalan-be
+    build:
+      context: docker/php
+      args:
+        UID: $U_ID
+    environment:
+      # variables necesarias para xdebug
+      PHP_IDE_CONFIG: serverName=DockerTinymarket
+      PHP_XDEBUG_ENABLED: 1
+      XDEBUG_CONFIG: remote_host=host.docker.internal remote_port=9005
+    volumes:
+      # nocopy evita hacer la copia del contenedor al host (nuestra maquina)
+      - sf-shopelchalan-be-sync:/appdata/www:nocopy
+      - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+      - ~/.ssh/id_rsa:/home/appuser/.ssh/id_rsa
+
+    networks:
+      - sf-shopelchalan-net
+      - mariadb-univ_net
+
+volumes:
+  sf-shopelchalan-be-sync:
+    external: true
+
+networks:
+  sf-shopelchalan-net:
+  mariadb-univ_net:
+    external: true
+
+
