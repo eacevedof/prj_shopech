@@ -6,10 +6,10 @@ class SeoProvider
 {
     private static $seo = [
         "home"=>[
-            "title"=>"Tiny Marketplace v1.0.0",
-            "description"=>"Sale and purchase anything fast",
-            "keywords" => "marketplace, small business, ",
-            "h1" => "Tiny Marketplace for small business"
+            "title"=>"Shop Admin v1.0.0",
+            "description"=>"Shop ECH Backend",
+            "keywords" => "shop el chalan backend",
+            "h1" => "Shop ECH for small business"
         ],
     ];
 
