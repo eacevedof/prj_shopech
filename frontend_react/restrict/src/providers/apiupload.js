@@ -18,7 +18,7 @@ const Apiupload = {
     try {
       const data = new FormData()
       data.append("resource-usertoken",uploadtoken)
-      data.append("folderdomain","shopelchalan.es")
+      data.append("folderdomain","elchalanaruba.es")
       data.append("file_1", inputfile)
       const response = await axios.post(url, data)
       //console.log("apiupload.async_post.response:",response)
