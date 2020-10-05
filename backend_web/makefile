@@ -78,3 +78,5 @@ be-logs: ## Tails the Symfony dev log
 ssh-be: ## ssh's into the be container
 	U_ID=${UID} docker exec -it --user ${UID} ${DOCKER_BE} bash
 
+remlogs: ## remove logs
+	rm -fr logs/*

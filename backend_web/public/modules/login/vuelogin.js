@@ -8,8 +8,8 @@ const app = new Vue({
             errors: [],
             btnsend: BTN_INISTATE,
             issending: false,
-            email: "eaf@ya.com",
-            password: "eaf",
+            email: "",
+            password: "",
         }
     },
     methods:{

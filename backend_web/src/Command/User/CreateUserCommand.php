@@ -1,5 +1,6 @@
 <?php
-//  php bin/console app:createuser <email> <password> <profile: 1-5>
+// ejemplo:
+// php bin/console app:createuser <email> <password> <profile: 1-5>
 // para que funcione hay que sar .env.local con ip 127 no el contenedor
 namespace App\Command\User;
 
