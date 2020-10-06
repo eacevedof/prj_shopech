@@ -1,5 +1,15 @@
 ### prj_shopech
 
+### To-Do
+- Cambiar etiquetas price y price1
+- quitar correos a fuego
+- Crear botón info
+- Crear link de descarga de listado modelo
+- pasar el frontal a sistema de tarjetas
+- mejorar el toast del backend
+- probar aviso por whatsapp
+
+
 ### Actualización composer update
 - **Error**
 ```
