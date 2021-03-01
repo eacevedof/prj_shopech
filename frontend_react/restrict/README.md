@@ -10,6 +10,7 @@
 ### Deploy
 - **`npm run build; py.sh react ./.pysh`**
 - **`npm run build; py.sh react "/Users/ioedu/projects/prj_shopech/frontend_react/restrict/.pysh"`**
+  - habria que preprarar prj_bash para que suba solo este build, lo he tenido que subir a mano
 
 - Servico [**ngrok**](https://ngrok.com/download)
   - Mapea una url httsp web a tu localhost 
